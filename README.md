@@ -4,7 +4,8 @@ This project analyzes patient characteristics associated with diabetes outcomes 
 The notebook is designed so that another data scientist can reproduce the analysis from the project repository without relying on the original analyst's local environment. 
 
 ### Google Colab Notebook Link
-Follow the link to open the completed Google Colab notebook: https://drive.google.com/file/d/1dvFbWtiCUnidiQeHg3zVepUdYsHRZ7PC/view?usp=sharing
+Follow the link to open the completed Google Colab notebook (choose "Open with Google Collaboration" when prompted options): 
+https://drive.google.com/file/d/1dvFbWtiCUnidiQeHg3zVepUdYsHRZ7PC/view?usp=sharing
 
 ---
 ## Analysis Overview
