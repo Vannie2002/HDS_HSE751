@@ -3,6 +3,9 @@
 This project analyzes patient characteristics associated with diabetes outcomes using a diabetes outcomes using a diabetes risk factor dataset. The purpose is to demonstrate a reproducible data science workflow, including data validation, preparation, descriptive statistics, visualization, correlation analysis, inferential statistics, and logistic regression. 
 The notebook is designed so that another data scientist can reproduce the analysis from the project repository without relying on the original analyst's local environment. 
 
+### Google Colab Notebook Link
+Follow the link to open the completed Google Colab notebook: https://drive.google.com/file/d/1dvFbWtiCUnidiQeHg3zVepUdYsHRZ7PC/view?usp=sharing
+
 ---
 ## Analysis Overview
 
