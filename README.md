@@ -30,7 +30,7 @@ The dataset contains **768 observations and 9 variables** representing patient c
 - 'Pregnancies'
 - 'Glucose'
 - 'D_BP'
-- 'Skin_Thickneww'
+- 'Skin_Thickness'
 - 'Insulin'
 - 'BMI'
 - 'Pedigree'
