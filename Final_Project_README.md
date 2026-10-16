@@ -140,7 +140,7 @@ The notebook follows a reproducible machine learning workflow:
 
 ## Pipeline Enhancements
 
-**1. Enhancement 1 - Reusable descriptive summary function**
+**Enhancement 1 - Reusable descriptive summary function**
 
 Repeated frequency and percentage calculations were combined into a reusable function that summarizes categorical variables. This reduces duplicated code, improves notebook organization, and allows additional variables to be analyzed by simple adding them to the variable list.
 
