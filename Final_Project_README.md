@@ -138,6 +138,42 @@ The notebook follows a reproducible machine learning workflow:
 11. **Feature importance:** Visualize the top 15 random forest features.
 12. **Conclusion and limitations:** Summarize the findings and discuss limitations and potential improvements.
 
+## Pipeline Enhancements
+
+**1. Enhancement 1 - Reusable descriptive summary function**
+
+Repeated frequency and percentage calculations were combined into a reusable function that summarizes categorical variables. This reduces duplicated code, improves notebook organization, and allows additional variables to be analyzed by simple adding them to the variable list.
+
+**Enhancement 2: Automatically assess class imbalance**
+
+An automated check was added to evaluate the distribution of the target classes and flag substantial class imbalance. This was implemented because only 6.2% of valid respondents reported delaying medical care due to cost. The enhancement helps inform the model evaluation strategy by indicating that accuracy alone may not adequately describe model performance.
+
+**Enhancement 3: MEPS-specific data cleaning**
+
+We inspected predictors for MEPS special response codes and converted invalud response codes such as -7, -8, and applicable -1 values into missing values. The standard missing-value checks did not detect these numeric codes, which could otherwise be incorrectly treated as meaningful data. This step makes data cleaning more appropriate for the MEPS dataset while preserving valid values such as 0 years of education and employment category 34.
+
+**Enhancement 4: Stratified, reproducible train-test split**
+
+We split the 15,000 observations into 12,000 training and 3,000 testing observations using stratify=y and random_state=42. Only 7.25% of adults reported delaying care, so the outcome distribution needed to be preserved across the two sets. This step supports reproducible evaluation and helps ensure that both sets contain a similar proportion of delayed-care cases.
+
+**Enhancement 5: Reusable preprocessing pipeline**
+
+We created reusable scikit-learn pipelines for median imputation and standardization of numeric predictors, plus most-frequent imputation and one-hot encoding of categorical predictors. The variables have different data types and include missing values, so this step automates preprocessing consistently for both models and fits transformations on training data rather than the full dataset, helping prevent data leakage.
+
+**Enhancement 6: Class-weighted model training**
+
+We set class_weight="balanced" in logistic regression and random forest. The outcome is imbalanced, with far fewer delayed-care cases than non-delayed-care cases. This step gives the minority class more weight during training so the models have an incentive to identify delayed-care cases. The results show that this alone did not eliminate the difficulty of predicting the minority class.
+
+**Enhancement 7: Multiple-metric model evaluation**
+
+We compared accuracy, precision, recall, F1-score, ROC-AUC, and confusion matrices for both models. Accuracy can be misleading when the outcome is imbalanced, so this step provides a more complete assessment of model performance. For example, random forest achieved 91.8% accuracy but only 6.4% recall, while logistic regression achieved 65.6% recall.
+
+**Enhancement 8: ROC curve visualization**
+
+We added ROC curves to compare model discrimination across classfication thresholds. A single classification threshold does not show the full trade-off between true-positive and false-positive rates. This makes the comparison more interpretable and shows that logistic regression had a higher ROC-AUC (0.712) than random forest (0.668).
+
+
+
 ## Key Findings
 
 The final modeling dataset contained **15,000 adults** with valid target responses.
